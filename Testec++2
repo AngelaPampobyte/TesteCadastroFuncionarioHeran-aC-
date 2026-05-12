@@ -1,0 +1,134 @@
+
+#include<iostream>
+using namespace std;
+
+class Pessoa {
+	protected:
+	   string cpf, nome;
+		    
+		int idade; 
+		  
+	public:
+	
+	Pessoa() {
+		nome = "Arthur";
+		cpf = "12233554443";                  
+		idade = 15;                 //construtor 
+		
+	}
+	
+	void CadastrarAluno(){
+		
+		
+		cout<<"\n Digite o nome do Aluno e idade \n";
+		cin>>nome;
+		while (nome == "") {
+		cout<<"\n Digite o nome!!! \n";
+		cin>>nome;
+		}
+		
+        cin>>idade;
+        while (idade < 1 || idade > 103) {
+		
+		cout<<"\n Digite uma idade valida \n";
+		
+			
+			
+			
+			cin>>idade;	
+			
+			
+		}
+	
+		cout<<"\n Digite o codigo de matricula \n";
+		
+		cin>>matricula;
+		while (matricula.empty()) {
+	     
+	     cout<<"\n ainda não digitou!! \n";
+	     cin>>matricula;
+	
+		}
+		
+		
+		
+	
+		
+		
+		
+		cout<<"\n Digite a disciplina \n";
+		cin>>disciplina;
+		cout<<"\n Digite a primeira nota e a segunda nota do aluno \n";
+		
+		cin>>nota1;
+		while (nota1 < 0 || nota1 > 10) {
+			cout<<"\n Digite uma nota valida \n";
+			cin>>nota1;
+		}
+		cin>>nota2;
+		while (nota2 < 0 || nota2 > 10) {
+			cout<<"\n Digite uma nota valida \n";
+			cin>>nota2;
+		}
+	}
+	
+	string VerificarFaixaEtaria() {
+		string FaixaEtaria;
+		if (idade <= 12){
+			FaixaEtaria = "crianca";
+		}
+		if (idade >=13 && idade <18) {
+			FaixaEtaria = "jovem";
+		}
+		if (idade >=18) {
+			FaixaEtaria = "adulto";
+		}
+	cout<<"\n o aluno eh:  \n"<<FaixaEtaria<<endl;
+	return FaixaEtaria;	
+		
+	}
+	
+	double CalcularMedia() {
+		double media = (nota1+nota2)/2;
+		
+		
+		
+		cout<<"\n a media do aluno eh: \n"<<media<<endl;
+		if (media < 6) {
+			cout<<"\n  STATUS: REPROVADO \n";
+		} else {
+			cout<<"\n STATUS: APROVADO \n";
+		}
+		
+		return media;
+		
+		
+		
+		
+	}
+	
+	void Mostrar ()
+	{
+		cout<<"\n DADOS DO ALUNO: \n\n";
+		cout<<"\n Nome: "<<nome<<endl;
+		cout<<"\n Idade: "<<idade<<endl;
+		cout<<"\n Matricula: "<<matricula<<endl;
+		cout<<"\n Disciplina: "<<disciplina<<endl;
+		cout<<"\n Notas: "<<nota1<<" e "<<nota2<<endl;
+		
+		
+		
+		
+	}
+	
+     
+};
+    main(){
+    Aluno a;
+	a.CadastrarAluno();	
+    a.Mostrar();	
+    a.VerificarFaixaEtaria();
+	a.CalcularMedia();	
+    	
+	}
+
